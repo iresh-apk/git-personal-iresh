@@ -3,39 +3,85 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio de Juan García</title>
-  <link rel="stylesheet" href="../assets/style.css">
+  <title>Portfolio de Iresh Venugopal</title>
+  <link rel="stylesheet" href="./style/style.css">
+  <script>
+    // Alternar entre modo claro y oscuro
+    function cambiarTema() {
+      document.body.classList.toggle('dark-mode');
+      const boton = document.getElementById("tema-btn");
+      boton.textContent = document.body.classList.contains('dark-mode') 
+        ? "Cambiar a modo claro" 
+        : "Cambiar a modo oscuro";
+    }
+
+    // Mensaje al enviar formulario
+    function enviarFormulario(event) {
+      event.preventDefault();
+      alert("¡Gracias por tu mensaje! Te responderé pronto.");
+    }
+  </script>
 </head>
 <body>
   <header>
     <h1>Portfolio profesional de Iresh Venugopal</h1>
     <nav>
       <ul>
+        <li><a href="#inicio">Inicio</a></li>
         <li><a href="#sobre-mi">Sobre mí</a></li>
         <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#galeria">Galería</a></li>
         <li><a href="#contacto">Contacto</a></li>
+        <li><a href="#testimonios">Testimonios</a></li>
       </ul>
     </nav>
+    <button id="tema-btn" onclick="cambiarTema()">Cambiar a modo oscuro</button>
   </header>
 
-  <main>
+  <main id="inicio">
     <section id="sobre-mi">
       <h2>Sobre mí</h2>
-      <p>Soy estudiante de desarrollo web y me apasiona aprender sobre nuevas tecnologías, frameworks y control de versiones con Git y GitHub.</p>
+      <p>¡Hola! Soy <strong>Iresh Venugopal</strong>, estudiante de desarrollo web. Me apasiona crear sitios atractivos y aprender sobre nuevas tecnologías como HTML, CSS, JavaScript y frameworks modernos.</p>
     </section>
 
     <section id="proyectos">
       <h2>Proyectos recientes</h2>
-      <ul>
-        <li><strong>Blog personal:</strong> un sitio web sobre programación y diseño web.</li>
-        <li><strong>Gestor de tareas:</strong> aplicación en JavaScript para organizar tareas diarias.</li>
-        <li><strong>Juego HTML5:</strong> pequeño proyecto interactivo con canvas.</li>
-      </ul>
+      <article>
+        <h3>Blog personal</h3>
+        <p>Web de artículos sobre programación y diseño, desarrollada con HTML y CSS.</p>
+      </article>
+      <article>
+        <h3>Gestor de tareas</h3>
+        <p>Aplicación web en JavaScript para organizar tareas diarias con almacenamiento local.</p>
+      </article>
+      <article>
+        <h3>Juego HTML5</h3>
+        <p>Juego interactivo con canvas y animaciones, diseñado en HTML5 y JS puro.</p>
+      </article>
+    </section>
+
+    <section id="galeria">
+      <h2>Galería de proyectos</h2>
+      <div class="galeria">
+        <figure>
+          <img src="./images/proyecto1.jpg" alt="Proyecto 1">
+          <figcaption>Proyecto 1 – Blog personal</figcaption>
+        </figure>
+        <figure>
+          <img src="./images/proyecto2.jpg" alt="Proyecto 2">
+          <figcaption>Proyecto 2 – Gestor de tareas</figcaption>
+        </figure>
+        <figure>
+          <img src="./images/proyecto3.jpg" alt="Proyecto 3">
+          <figcaption>Proyecto 3 – Juego HTML5</figcaption>
+        </figure>
+      </div>
     </section>
 
     <section id="contacto">
       <h2>Contacto</h2>
-      <form>
+      <p>¿Quieres ponerte en contacto conmigo? Rellena el siguiente formulario:</p>
+      <form onsubmit="enviarFormulario(event)">
         <label for="nombre">Nombre:</label><br>
         <input type="text" id="nombre" name="nombre" required><br><br>
 
@@ -45,10 +91,37 @@
         <button type="submit">Enviar</button>
       </form>
     </section>
+
+    <section id="testimonios">
+      <h2>Testimonios de clientes</h2>
+      <article>
+        <blockquote>
+          “Iresh desarrolló mi web con un diseño limpio y profesional. Lo recomiendo totalmente.”
+        </blockquote>
+        <p>— Laura Pérez, Diseñadora gráfica</p>
+      </article>
+      <article>
+        <blockquote>
+          “Excelente atención al detalle y comunicación constante durante el proyecto.”
+        </blockquote>
+        <p>— Carlos Ruiz, Emprendedor</p>
+      </article>
+    </section>
+
+    <section id="servicios">
+      <h2>Servicios</h2>
+      <ul>
+        <li>Desarrollo Web</li>
+        <li>Diseño UI/UX</li>
+        <li>Optimización SEO</li>
+        <li>Consultoría tecnológica</li>
+      </ul>
+    </section>
+
   </main>
 
   <footer>
-    <p>2025 Iresh Venugopañ – Todos los derechos reservados.</p>
+    <p>© 2025 Iresh Venugopal – Todos los derechos reservados.</p>
   </footer>
 </body>
 </html>
